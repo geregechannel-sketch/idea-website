@@ -1,0 +1,8 @@
+node_modules/
+dist/
+.env
+*.zip
+*.log
+initial-credentials.local.txt
+*.sqlite
+private_uploads/

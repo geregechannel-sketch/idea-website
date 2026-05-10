@@ -1,0 +1,13 @@
+RewriteEngine On
+
+# Force HTTPS for cPanel / Apache hosting.
+RewriteCond %{HTTPS} !=on
+RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# Serve existing files and directories directly.
+RewriteCond %{REQUEST_FILENAME} -f [OR]
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^ - [L]
+
+# Support Vite single-page navigation.
+RewriteRule ^ index.html [L]
